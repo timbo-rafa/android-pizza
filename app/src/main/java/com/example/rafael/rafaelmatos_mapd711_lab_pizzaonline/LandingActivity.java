@@ -2,6 +2,9 @@ package com.example.rafael.rafaelmatos_mapd711_lab_pizzaonline;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class LandingActivity extends AppCompatActivity {
 
@@ -11,8 +14,10 @@ public class LandingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_landing);
     }
 
+    //Initialize the contents of the activity's options menu
     public boolean onCreateOptionMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.speed, menu);
+        //show the menu
+        getMenuInflater().inflate(R.menu.toppings, menu);
         return true;
     }
 
@@ -20,14 +25,17 @@ public class LandingActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //handle menu items using their id
         switch (item.getItemId()){
-            case R.id.m1:
-                Toast.makeText("You selected option 1!").show();
+            case R.id.meat:
+                Toast.makeText("Meat", Toast.LENGTH_LONG).show();
                 break;
-            case R.id.m2:
+            case R.id.hawaiian:
+                Toast.makeText("Hawaiian", Toast.LENGTH_LONG).show();
                 break;
-            case R.id.m3:
+            case R.id.veggie:
+                Toast.makeText("Veggie", Toast.LENGTH_LONG).show();
                 break;
-            case R.id.m4:
+            case R.id.mediterranean:
+                Toast.makeText("Mediterranean", Toast.LENGTH_LONG).show();
                 break;
         }
     }
