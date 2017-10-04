@@ -7,11 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ToppingsActivity extends AppCompatActivity {
 
     String flavour;
     String pizzaSize;
+    String toppings;
+
+    CheckBox cheeseCheckBox;
+    CheckBox greenPepperCheckBox;
+    CheckBox smokedHamCheckBox;
+    CheckBox spinachCheckBox;
+    CheckBox spanishOnionsCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +31,13 @@ public class ToppingsActivity extends AppCompatActivity {
         // get flavour from previous Activity
         flavour = sizeActivity.getStringExtra("flavour");
         pizzaSize = sizeActivity.getStringExtra("pizzaSize");
+        toppings = "with ";
 
-        CheckBox cheeseCheckBox        = (CheckBox) findViewById(R.id.cheeseCheckBox);
-        CheckBox greenPepperCheckBox   = (CheckBox) findViewById(R.id.greenPepperCheckBox);
-        CheckBox smokedHamCheckBox     = (CheckBox) findViewById(R.id.smokedHamCheckBox);
-        final CheckBox spinachCheckBox       = (CheckBox) findViewById(R.id.spinachCheckBox);
-        CheckBox spanishOnionsCheckBox = (CheckBox) findViewById(R.id.spanishOnionsCheckBox);
+        cheeseCheckBox        = (CheckBox) findViewById(R.id.cheeseCheckBox);
+        greenPepperCheckBox   = (CheckBox) findViewById(R.id.greenPepperCheckBox);
+        smokedHamCheckBox     = (CheckBox) findViewById(R.id.smokedHamCheckBox);
+        spinachCheckBox       = (CheckBox) findViewById(R.id.spinachCheckBox);
+        spanishOnionsCheckBox = (CheckBox) findViewById(R.id.spanishOnionsCheckBox);
 
         // display flavour on screen
         TextView toppingsQuestionText = (TextView) findViewById( R.id.toppingsQuestionText );
@@ -37,7 +46,22 @@ public class ToppingsActivity extends AppCompatActivity {
         Button nextButton = (Button) findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if (cheeseCheckBox.isChecked())        toppings += getString( R.string.cheese        ) + ", ";
+                if (greenPepperCheckBox.isChecked())   toppings += getString( R.string.greenPepper   ) + ", ";
+                if (smokedHamCheckBox.isChecked())     toppings += getString( R.string.smokedHam     ) + ", ";
+                if (spinachCheckBox.isChecked())       toppings += getString( R.string.spinach       ) + ", ";
+                if (spanishOnionsCheckBox.isChecked()) toppings += getString( R.string.spanishOnions ) + ", ";
 
+                int idx = toppings.lastIndexOf(",");
+                if (idx != -1) {
+                    //replace last comma with period
+                    toppings = new StringBuilder(toppings).replace(idx, idx + 2, ".").toString();
+                } else { //No toppings
+                    toppings = "with no extra toppings";
+
+
+                }
+                Toast.makeText(ToppingsActivity.this, "Toppings:" + toppings, Toast.LENGTH_SHORT).show();
             }
         });
     }
