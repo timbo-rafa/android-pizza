@@ -6,25 +6,28 @@
     android:layout_height="match_parent"
     tools:context="com.example.rafael.rafaelmatos_mapd711_lab_pizzaonline.LandingActivity">
 
+
     <ImageView
         android:id="@+id/imagepizza"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:srcCompat="@mipmap/pizza"
+        app:srcCompat="@drawable/pizza"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/company-description"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imagepizza"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/imagepizza"
         android:layout_toRightOf="@+id/imagepizza"
-        android:ems="10"
         android:inputType="textMultiLine"
-        android:text="We Like Pizza! Come eat with us! We are a company dedicated to bring the best pizza to our customers!" />
+        android:text="We Like Pizza! Come eat with us! We are a company dedicated to bring the best pizza to our customers!"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
+        android:gravity="center"/>
 
 </RelativeLayout>

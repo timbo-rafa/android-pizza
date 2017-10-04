@@ -1,5 +1,6 @@
 package com.example.rafael.rafaelmatos_mapd711_lab_pizzaonline;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,28 +16,39 @@ public class LandingActivity extends AppCompatActivity {
     }
 
     //Initialize the contents of the activity's options menu
-    public boolean onCreateOptionMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {
         //show the menu
-        getMenuInflater().inflate(R.menu.toppings, menu);
+        getMenuInflater().inflate(R.menu.flavours, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //handle menu items using their id
+        Intent sizeActivity = new Intent(this, SizeActivity.class);
+        String flavour;
+        //handle menu items  using their id
         switch (item.getItemId()){
             case R.id.meat:
-                Toast.makeText("Meat", Toast.LENGTH_LONG).show();
+                flavour = getString( R.string.meat );
                 break;
             case R.id.hawaiian:
-                Toast.makeText("Hawaiian", Toast.LENGTH_LONG).show();
+                flavour = getString( R.string.hawaiian );
                 break;
             case R.id.veggie:
-                Toast.makeText("Veggie", Toast.LENGTH_LONG).show();
+                flavour = getString( R.string.veggie );
                 break;
             case R.id.mediterranean:
-                Toast.makeText("Mediterranean", Toast.LENGTH_LONG).show();
+                flavour = getString( R.string.mediterranean );
+                break;
+            default:
+                flavour = "Unknown flavour selected";
                 break;
         }
+        sizeActivity.putExtra("flavour", flavour);
+        Toast.makeText(this, flavour + "pizza selected!", Toast.LENGTH_SHORT).show();
+
+        //Start SizeActivity, passing the chosen pizza flavour
+        startActivity(sizeActivity);
+        return true;
     }
 }
