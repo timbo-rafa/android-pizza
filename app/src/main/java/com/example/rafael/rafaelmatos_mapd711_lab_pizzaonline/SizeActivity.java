@@ -41,9 +41,10 @@ public class SizeActivity extends AppCompatActivity {
         TextView sizeQuestionText = (TextView) findViewById( R.id.sizeQuestionText );
         sizeQuestionText.setText("What size would you like for your " + flavour + " Pizza?");
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                Intent ToppingsActivity = new Intent (SizeActivity.this, ToppingsActivity.class);
+
                 if (radSmall.isChecked()) {
                     pizzaSize = getString(R.string.small);
                 } else if (radMedium.isChecked()) {
@@ -53,7 +54,13 @@ public class SizeActivity extends AppCompatActivity {
                 } else {
                     pizzaSize = getString(R.string.extraLarge);
                 }
+                //display current choices to client
                 Toast.makeText(SizeActivity.this, pizzaSize + " " + flavour + " selected!", Toast.LENGTH_SHORT).show();
+
+                //pass selections to next activity (to select toppings)
+                ToppingsActivity.putExtra("flavour", flavour);
+                ToppingsActivity.putExtra("pizzaSize", pizzaSize);
+                startActivity(ToppingsActivity);
             }
         });
     }
