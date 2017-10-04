@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cheese">Cheese</string>
+    <string name="greenPepper">Green Pepper</string>
+    <string name="smokedHam">Smoked Ham</string>
+    <string name="spinach">Spinach</string>
+    <string name="blackOlives">Black Olives</string>
+    <string name="spanishOnions">Spanish Onions</string>
+
+</resources>
