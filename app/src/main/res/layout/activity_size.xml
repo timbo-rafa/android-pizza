@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/chooseSize"
+        android:id="@+id/sizeQuestionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
@@ -20,7 +20,7 @@
     <RadioGroup android:id="@+id/radGroupSize"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/chooseSize">
+        android:layout_below="@id/sizeQuestionText">
         <RadioButton
             android:id="@+id/radSmall"
             android:layout_width="wrap_content"
