@@ -45,7 +45,7 @@ public class LandingActivity extends AppCompatActivity {
                 break;
         }
         sizeActivity.putExtra("flavour", flavour);
-        Toast.makeText(this, flavour + "pizza selected!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, flavour + " pizza selected!", Toast.LENGTH_SHORT).show();
 
         //Start SizeActivity, passing the chosen pizza flavour
         startActivity(sizeActivity);
