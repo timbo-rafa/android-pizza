@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.rafael.rafaelmatos_mapd711_lab_pizzaonline.ToppingsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView android:id="@+id/toppingsQuestionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please choose your toppings:"/>
+
+    <CheckBox android:id="@+id/cheeseCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cheese"
+        android:layout_below="@id/toppingsQuestionText"/>
+    <CheckBox android:id="@+id/greenPepperCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/greenPepper"
+        android:layout_below="@id/cheeseCheckBox"/>
+    <CheckBox android:id="@+id/smokedHamCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/smokedHam"
+        android:layout_below="@id/greenPepperCheckBox"/>
+    <CheckBox android:id="@+id/spinachCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/spinach"
+        android:layout_below="@id/smokedHamCheckBox"/>
+    <CheckBox android:id="@+id/blackOlivesCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/blackOlives"
+        android:layout_below="@id/spinachCheckBox"/>
+    <CheckBox android:id="@+id/spanishOnionsCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/spanishOnions"
+        android:layout_below="@id/blackOlivesCheckBox"/>
+
+</RelativeLayout>

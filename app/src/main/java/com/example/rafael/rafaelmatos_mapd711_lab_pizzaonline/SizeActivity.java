@@ -41,6 +41,7 @@ public class SizeActivity extends AppCompatActivity {
         TextView sizeQuestionText = (TextView) findViewById( R.id.sizeQuestionText );
         sizeQuestionText.setText("What size would you like for your " + flavour + " Pizza?");
 
+        // Save radio button selected and go to next activity
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 Intent ToppingsActivity = new Intent (SizeActivity.this, ToppingsActivity.class);
