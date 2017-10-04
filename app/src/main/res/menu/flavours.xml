@@ -18,6 +18,6 @@
     <item
         style="@style/menu_item_style"
         android:id="@+id/mediterranean"
-        android:title="@string/veggie"
+        android:title="@string/mediterranean"
         android:orderInCategory="4"></item>
 </menu>
