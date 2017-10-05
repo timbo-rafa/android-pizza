@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">RafaelMatos_MAPD711_Lab_PizzaOnline</string>
     <string name="checkoutText">Check Out</string>
-    <string name="orderText">Place Order</string>
+    <string name="orderText">Order</string>
 </resources>
