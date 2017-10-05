@@ -44,6 +44,7 @@ public class ToppingsActivity extends AppCompatActivity {
         toppingsQuestionText.setText("Would you like toppings for your " + pizzaSize + " " + flavour + " Pizza?");
 
         Button nextButton = (Button) findViewById(R.id.nextButton);
+        //Capture selected toppings on button press
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent customerInfoActivity = new Intent(ToppingsActivity.this, CustomerInfoActivity.class);
@@ -62,6 +63,8 @@ public class ToppingsActivity extends AppCompatActivity {
                 } else { //No toppings
                     toppings += getString(R.string.none);
                 }
+
+                //feedback data on screen
                 Toast.makeText(ToppingsActivity.this,
                         pizzaSize + " " + flavour + " " + toppings + " selected!" , Toast.LENGTH_SHORT).show();
                 customerInfoActivity.putExtra("flavour", flavour);

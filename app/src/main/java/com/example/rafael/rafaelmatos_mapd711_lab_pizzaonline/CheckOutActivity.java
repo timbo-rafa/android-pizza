@@ -26,6 +26,8 @@ public class CheckOutActivity extends AppCompatActivity {
         pizzaSize = customerInfoActivity.getStringExtra("pizzaSize");
         toppings = customerInfoActivity.getStringExtra("toppings");
         customerData = customerInfoActivity.getStringArrayExtra("customerData");
+
+        // set text with customer data
         checkOutText.setText(customerData[0] +  ", thank you for your online order. " +
             "Your " + pizzaSize + " " + flavour + " " + toppings +
             " order was successfully received and will be delivered to " +

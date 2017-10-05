@@ -29,10 +29,12 @@ public class CustomerInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_info);
         Intent toppingsActivity = getIntent();
 
+        // pizza specifications
         flavour = toppingsActivity.getStringExtra("flavour");
         pizzaSize = toppingsActivity.getStringExtra("pizzaSize");
         toppings = toppingsActivity.getStringExtra("toppings");
 
+        //Text input
         customerNameEditText = (EditText) findViewById(R.id.customerNameInput);
         customerAddressEditText = (EditText) findViewById(R.id.customerAddressInput);
         customerZipEditText = (EditText) findViewById(R.id.customerZipCodeInput);
@@ -41,10 +43,13 @@ public class CustomerInfoActivity extends AppCompatActivity {
         customerCardExpiryDateEditText = (EditText) findViewById(R.id.customerCardExpiryDateInput);
 
         Button orderButton = (Button) findViewById(R.id.orderButton);
+
+        //Get customer data on button press
         orderButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent checkOutActivity = new Intent(CustomerInfoActivity.this, CheckOutActivity.class);
 
+                //customer data
                 customerData = new String[]{
                         customerNameEditText.getText().toString(),
                         customerAddressEditText.getText().toString(),
@@ -54,6 +59,7 @@ public class CustomerInfoActivity extends AppCompatActivity {
                         customerCardExpiryDateEditText.getText().toString()
                 };
 
+                //pass data to next activity
                 //Toast.makeText(ToppingsActivity.this, pizzaSize + " " + flavour + " " + toppings, Toast.LENGTH_SHORT).show();
                 checkOutActivity.putExtra("flavour", flavour);
                 checkOutActivity.putExtra("pizzaSize", pizzaSize);

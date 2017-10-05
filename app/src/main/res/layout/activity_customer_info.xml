@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.rafael.rafaelmatos_mapd711_lab_pizzaonline.CustomerInfoActivity">
 
+    // Labels
     <TextView android:id="@+id/customerName"
         style="@style/text"
         android:layout_width="wrap_content"
@@ -42,11 +43,13 @@
         android:layout_below="@id/customerCard"
         android:text="@string/customerCardExpiryDate"/>
 
+    // Input Text
     <EditText android:id="@+id/customerNameInput"
         style="@style/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_toEndOf="@id/customerCardExpiryDate"
+        android:layout_toRightOf="@id/customerCardExpiryDate"
         android:layout_alignBaseline="@id/customerName"
         />
     <EditText android:id="@+id/customerAddressInput"
@@ -54,14 +57,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/customerNameInput"
-        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_toEndOf="@id/customerCardExpiryDate"
+        android:layout_toRightOf="@id/customerCardExpiryDate"
         android:layout_alignBaseline="@id/customerAddress"/>
     <EditText android:id="@+id/customerZipCodeInput"
         style="@style/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/customerAddressInput"
-        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_toEndOf="@id/customerCardExpiryDate"
+        android:layout_toRightOf="@id/customerCardExpiryDate"
         android:layout_alignBaseline="@id/customerZipCode"
         />
     <EditText android:id="@+id/customerPhoneInput"
@@ -69,7 +74,8 @@
         android:layout_height="wrap_content"
         style="@style/text"
         android:layout_below="@id/customerZipCodeInput"
-        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_toEndOf="@id/customerCardExpiryDate"
+        android:layout_toRightOf="@id/customerCardExpiryDate"
         android:layout_alignBaseline="@id/customerPhone"
         android:inputType="phone"
         android:digits="0123456789+"
@@ -79,7 +85,8 @@
         android:layout_height="wrap_content"
         style="@style/text"
         android:layout_below="@id/customerPhoneInput"
-        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_toEndOf="@id/customerCardExpiryDate"
+        android:layout_toRightOf="@id/customerCardExpiryDate"
         android:layout_alignBaseline="@id/customerCard"
         android:inputType="number"
         android:digits="0123456789"
@@ -89,7 +96,8 @@
         android:layout_height="wrap_content"
         style="@style/text"
         android:layout_below="@id/customerCardInput"
-        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_toEndOf="@id/customerCardExpiryDate"
+        android:layout_toRightOf="@id/customerCardExpiryDate"
         android:layout_alignBaseline="@id/customerCardExpiryDate"
         android:inputType="date"
         />

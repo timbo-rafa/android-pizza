@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:text="Please choose the size of the pizza:"
+        android:text="@string/chooseSize"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -31,21 +31,18 @@
             android:id="@+id/radMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/radSmall"
             android:text="@string/medium" />
 
         <RadioButton
             android:id="@+id/radLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/radMedium"
             android:text="@string/large" />
 
         <RadioButton
             android:id="@+id/radExtraLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/radLarge"
             android:text="@string/extraLarge" />
     </RadioGroup>
 </RelativeLayout>

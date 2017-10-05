@@ -2,4 +2,6 @@
     <string name="app_name">RafaelMatos_MAPD711_Lab_PizzaOnline</string>
     <string name="checkoutText">Check Out</string>
     <string name="orderText">Order</string>
+    <string name="chooseSize">Please choose the size of your pizza:</string>
+    <string name="introductionText">We Like Pizza! Come eat with us! We are a company dedicated to bring the best pizza to our customers!</string>
 </resources>

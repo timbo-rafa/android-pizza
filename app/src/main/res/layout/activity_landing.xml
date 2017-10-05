@@ -9,25 +9,22 @@
 
     <ImageView
         android:id="@+id/imagepizza"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:srcCompat="@drawable/pizza"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        style="@style/text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imagepizza"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imagepizza"
-        android:layout_toRightOf="@+id/imagepizza"
-        android:inputType="textMultiLine"
-        android:text="We Like Pizza! Come eat with us! We are a company dedicated to bring the best pizza to our customers!"
-        android:textAlignment="textStart"
-        android:textSize="20dp"
+        android:layout_below="@id/imagepizza"
+        android:text="@string/introductionText"
         android:gravity="center"/>
 
 </RelativeLayout>

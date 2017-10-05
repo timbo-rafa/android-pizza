@@ -26,6 +26,7 @@ public class LandingActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent sizeActivity = new Intent(this, SizeActivity.class);
         String flavour;
+
         //handle menu items  using their id
         switch (item.getItemId()){
             case R.id.meat:
