@@ -32,6 +32,7 @@ public class ToppingsActivity extends AppCompatActivity {
         flavour = sizeActivity.getStringExtra("flavour");
         pizzaSize = sizeActivity.getStringExtra("pizzaSize");
 
+        // associate references with objects
         cheeseCheckBox        = (CheckBox) findViewById(R.id.cheeseCheckBox);
         greenPepperCheckBox   = (CheckBox) findViewById(R.id.greenPepperCheckBox);
         smokedHamCheckBox     = (CheckBox) findViewById(R.id.smokedHamCheckBox);
@@ -45,6 +46,8 @@ public class ToppingsActivity extends AppCompatActivity {
         Button nextButton = (Button) findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Intent customerInfoActivity = new Intent(ToppingsActivity.this, CustomerInfoActivity.class);
+
                 toppings = "with ";
                 if (cheeseCheckBox.isChecked())        toppings += getString( R.string.cheese        ) + ", ";
                 if (greenPepperCheckBox.isChecked())   toppings += getString( R.string.greenPepper   ) + ", ";
@@ -61,6 +64,10 @@ public class ToppingsActivity extends AppCompatActivity {
                 }
                 Toast.makeText(ToppingsActivity.this,
                         pizzaSize + " " + flavour + " " + toppings, Toast.LENGTH_SHORT).show();
+                customerInfoActivity.putExtra("flavour", flavour);
+                customerInfoActivity.putExtra("pizzaSize", pizzaSize);
+                customerInfoActivity.putExtra("toppings", toppings);
+                startActivity(customerInfoActivity);
             }
         });
     }
