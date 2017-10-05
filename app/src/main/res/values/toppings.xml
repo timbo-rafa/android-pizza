@@ -6,5 +6,5 @@
     <string name="spinach">Spinach</string>
     <string name="blackOlives">Black Olives</string>
     <string name="spanishOnions">Spanish Onions</string>
-
+    <string name="none">no extra toppings</string>
 </resources>

@@ -31,7 +31,6 @@ public class ToppingsActivity extends AppCompatActivity {
         // get flavour from previous Activity
         flavour = sizeActivity.getStringExtra("flavour");
         pizzaSize = sizeActivity.getStringExtra("pizzaSize");
-        toppings = "with ";
 
         cheeseCheckBox        = (CheckBox) findViewById(R.id.cheeseCheckBox);
         greenPepperCheckBox   = (CheckBox) findViewById(R.id.greenPepperCheckBox);
@@ -46,6 +45,7 @@ public class ToppingsActivity extends AppCompatActivity {
         Button nextButton = (Button) findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                toppings = "with ";
                 if (cheeseCheckBox.isChecked())        toppings += getString( R.string.cheese        ) + ", ";
                 if (greenPepperCheckBox.isChecked())   toppings += getString( R.string.greenPepper   ) + ", ";
                 if (smokedHamCheckBox.isChecked())     toppings += getString( R.string.smokedHam     ) + ", ";
@@ -55,13 +55,12 @@ public class ToppingsActivity extends AppCompatActivity {
                 int idx = toppings.lastIndexOf(",");
                 if (idx != -1) {
                     //replace last comma with period
-                    toppings = new StringBuilder(toppings).replace(idx, idx + 2, ".").toString();
+                    toppings = new StringBuilder(toppings).replace(idx, idx + 2, " selected!").toString();
                 } else { //No toppings
-                    toppings = "with no extra toppings";
-
-
+                    toppings += getString(R.string.none) + " selected!";
                 }
-                Toast.makeText(ToppingsActivity.this, "Toppings:" + toppings, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ToppingsActivity.this,
+                        pizzaSize + " " + flavour + " " + toppings, Toast.LENGTH_SHORT).show();
             }
         });
     }
