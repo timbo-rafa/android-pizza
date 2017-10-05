@@ -48,7 +48,7 @@ public class ToppingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent customerInfoActivity = new Intent(ToppingsActivity.this, CustomerInfoActivity.class);
 
-                toppings = "with ";
+                toppings = "pizza with ";
                 if (cheeseCheckBox.isChecked())        toppings += getString( R.string.cheese        ) + ", ";
                 if (greenPepperCheckBox.isChecked())   toppings += getString( R.string.greenPepper   ) + ", ";
                 if (smokedHamCheckBox.isChecked())     toppings += getString( R.string.smokedHam     ) + ", ";
@@ -58,12 +58,12 @@ public class ToppingsActivity extends AppCompatActivity {
                 int idx = toppings.lastIndexOf(",");
                 if (idx != -1) {
                     //replace last comma with period
-                    toppings = new StringBuilder(toppings).replace(idx, idx + 2, " selected!").toString();
+                    toppings = new StringBuilder(toppings).replace(idx, idx + 2, "").toString();
                 } else { //No toppings
-                    toppings += getString(R.string.none) + " selected!";
+                    toppings += getString(R.string.none);
                 }
                 Toast.makeText(ToppingsActivity.this,
-                        pizzaSize + " " + flavour + " " + toppings, Toast.LENGTH_SHORT).show();
+                        pizzaSize + " " + flavour + " " + toppings + " selected!" , Toast.LENGTH_SHORT).show();
                 customerInfoActivity.putExtra("flavour", flavour);
                 customerInfoActivity.putExtra("pizzaSize", pizzaSize);
                 customerInfoActivity.putExtra("toppings", toppings);

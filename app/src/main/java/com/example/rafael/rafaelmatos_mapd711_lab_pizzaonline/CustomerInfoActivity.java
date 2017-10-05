@@ -39,24 +39,26 @@ public class CustomerInfoActivity extends AppCompatActivity {
         customerPhoneEditText = (EditText) findViewById(R.id.customerPhoneInput);
         customerCardEditText = (EditText) findViewById(R.id.customerCardInput);
         customerCardExpiryDateEditText = (EditText) findViewById(R.id.customerCardExpiryDateInput);
-        customerData = new String[]{
-                customerNameEditText.getText().toString(),
-                customerAddressEditText.getText().toString(),
-                customerZipEditText.getText().toString(),
-                customerPhoneEditText.getText().toString(),
-                customerCardEditText.getText().toString(),
-                customerCardExpiryDateEditText.getText().toString()
-        };
 
         Button orderButton = (Button) findViewById(R.id.orderButton);
         orderButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent checkOutActivity = new Intent(CustomerInfoActivity.this, CheckOutActivity.class);
 
+                customerData = new String[]{
+                        customerNameEditText.getText().toString(),
+                        customerAddressEditText.getText().toString(),
+                        customerZipEditText.getText().toString(),
+                        customerPhoneEditText.getText().toString(),
+                        customerCardEditText.getText().toString(),
+                        customerCardExpiryDateEditText.getText().toString()
+                };
+
                 //Toast.makeText(ToppingsActivity.this, pizzaSize + " " + flavour + " " + toppings, Toast.LENGTH_SHORT).show();
                 checkOutActivity.putExtra("flavour", flavour);
                 checkOutActivity.putExtra("pizzaSize", pizzaSize);
                 checkOutActivity.putExtra("toppings", toppings);
+                checkOutActivity.putExtra("customerData", customerData);
                 startActivity(checkOutActivity);
             }
         });
