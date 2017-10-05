@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="customerNameText">Name:</string>
+    <string name="customerAddressText">Address:</string>
+    <string name="customerZipCodeText">Zip Code:</string>
+    <string name="customerPhone">Phone:</string>
+    <string name="customerCard">Credit Card:</string>
+    <string name="customerCardExpiryDate">Expiry Date:</string>
+</resources>

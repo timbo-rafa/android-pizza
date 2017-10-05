@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.rafael.rafaelmatos_mapd711_lab_pizzaonline.CustomerInfoActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView android:id="@+id/customerName"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customerNameText"/>
+    <TextView android:id="@+id/customerAddress"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerName"
+        android:text="@string/customerAddressText"/>
+    <TextView android:id="@+id/customerZipCode"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerAddress"
+        android:text="@string/customerZipCodeText"/>
+    <TextView android:id="@+id/customerPhone"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerZipCode"
+        android:text="@string/customerPhone"/>
+    <TextView android:id="@+id/customerCard"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerPhone"
+        android:text="@string/customerCard"/>
+    <TextView android:id="@+id/customerCardExpiryDate"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerCard"
+        android:text="@string/customerCardExpiryDate"/>
+
+    <EditText android:id="@+id/customerNameInput"
+        style="@style/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_alignBaseline="@id/customerName"
+        />
+    <EditText android:id="@+id/customerAddressInput"
+        style="@style/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerNameInput"
+        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_alignBaseline="@id/customerAddress"/>
+    <EditText android:id="@+id/customerZipCodeInput"
+        style="@style/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customerAddressInput"
+        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_alignBaseline="@id/customerZipCode"
+        />
+    <EditText android:id="@+id/customerPhoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text"
+        android:layout_below="@id/customerZipCodeInput"
+        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_alignBaseline="@id/customerPhone"
+        android:inputType="phone"
+        android:digits="0123456789+"
+        />
+    <EditText android:id="@+id/customerCardInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text"
+        android:layout_below="@id/customerPhoneInput"
+        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_alignBaseline="@id/customerCard"
+        android:inputType="number"
+        android:digits="0123456789"
+        />
+    <EditText android:id="@+id/customerCardExpiryDateInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text"
+        android:layout_below="@id/customerCardInput"
+        android:layout_toRightOf="@id/customerZipCode"
+        android:layout_alignBaseline="@id/customerCardExpiryDate"
+        android:inputType="date"
+        />
+
+    <Button android:id="@+id/orderButton"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/customerCardExpiryDate"
+        android:text="@string/orderText"
+        />
+</RelativeLayout>
